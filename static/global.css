@@ -1,0 +1,43 @@
+
+/* My Animations */
+.fade-in { animation: fadeIn 1s both; }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fade-right { animation: fadeRight 1s both; }
+@keyframes fadeRight {
+  0% { 
+    transform: translateX(-2rem);
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateX(0);
+    opacity: 1; 
+  }
+}
+
+.fade-left { animation: fadeLeft 1s both }
+@keyframes fadeLeft {
+  0% { 
+    transform: translateX(2rem);
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateX(0);
+    opacity: 1; 
+  }
+}
+
+.fade-up { animation: fadeUp 1s both }
+@keyframes fadeUp {
+  0% { 
+    transform: translateY(2rem);
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0);
+    opacity: 1; 
+  }
+}

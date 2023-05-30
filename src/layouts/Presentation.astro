@@ -1,0 +1,54 @@
+---
+import GithubIcon from '../components/svgs/GithubIcon.astro'
+import LinkedinIcon from '../components/svgs/LinkedinIcon.astro'
+import Wave from '../components/svgs/Wave.astro'
+import Link from '../components/Link.astro'
+import '@fontsource/roboto'
+---
+
+<main id="presentation" class="relative w-full m-auto">
+  <div class="fade-up w-full h-[150px] absolute bottom-0 left-0 fill-slate-600 dark:fill-slate-300 hidden lg:block">
+    <Wave />
+  </div>
+  
+  <div class="w-full md:w-[90%] m-auto flex justify-center">
+    <div class="basis-full md:basis-1/2 flex flex-col justify-center z-10">
+      <div class="fade-right p-6 flex flex-col gap-3 font-[Roboto]">
+        <div>
+          <h1 class="text-zinc-800 dark:text-zinc-100 text-6xl font-bold">Elwin Roman</h1>
+          <h2 class="text-red-600 text-2xl font-bold">Full Stack Developer</h2>
+        </div>
+        <p class="text-stone-700 dark:text-stone-300">
+          Ingeniero de Sistemas con sólidos conocimientos en desarrollo web. Poseo experiencia en el uso de metodologías ágiles specializado en la aplicación de métricas ágiles.
+        </p>
+        <p class="text-stone-700 dark:text-stone-300">
+          Me destaco por ser altamente colaborativo, creativo, y sobre todo autodidacta. Comprometido con la excelencia, la innovación y el crecimiento profesional.
+        </p>  
+      </div>
+
+      <div class="fade-in flex justify-center gap-3">
+        <Link href="https://www.github.com/elwinroman">
+          <GithubIcon width="24" height="24"/>
+        </Link>
+        <Link href="https://www.linkedin.com/in/elwinroman">
+          <LinkedinIcon width="20" height="20"/>
+        </Link>
+      </div>
+    </div>
+    
+    <div class="fade-left z-10 hidden md:block">
+      <img src="../../public/img/developer.png" width="400" height="400" alt="" class="">
+    </div>
+  </div>
+</main>
+
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  #presentation {
+    margin-top: theme(spacing.20);
+    height: calc(100vh - theme(spacing.20));
+  }
+</style>

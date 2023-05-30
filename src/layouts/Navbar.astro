@@ -1,0 +1,34 @@
+---
+import ThemeMode from '../components/ThemeMode.jsx'
+
+const navs = ['Sobre mi', 'Projectos', 'Habilidades']
+---
+
+<nav id="mynavbar" class="w-full h-20 fixed top-0 bg-zinc-200 dark:bg-slate-800 dark:[&.is-sticky]:bg-slate-800/70 [&.is-sticky]:bg-zinc-200/70 border-b border-zinc-300 dark:border-slate-700 z-50 px-3">
+  <ul class="h-full flex flex-row justify-center items-center gap-5 text-slate-800 dark:text-slate-200">
+    {
+      navs.map((nav) => <li class="hover:bg-slate-600 hover:text-slate-200 py-2 px-3 cursor-pointer rounded transition duration-200 font-[Roboto] font-medium">{nav}</li>)
+    }
+  </ul>
+  <ThemeMode client:only/>
+</nav>
+
+<script>
+  // Sticky navbar
+  const navbar = document.getElementById('mynavbar')
+  const height = navbar.clientHeight
+  window.addEventListener('scroll', () => {
+    window.scrollY >= height 
+    ? navbar.classList.add('is-sticky') 
+    : navbar.classList.remove('is-sticky')
+  })
+</script>
+
+<style>
+  #mynavbar.is-sticky {
+    border: none;
+    backdrop-filter: blur(5px) saturate(4.5);
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.4);
+    transition: all 200ms ease-in-out;
+  }
+</style>
