@@ -4,16 +4,16 @@ import '@fontsource-variable/inter'
 import Layout from '../layouts/Layout.astro'
 import Navbar from '../layouts/Navbar.astro'
 import Presentation from '../layouts/Presentation.astro'
+import Projects from '../layouts/Projects.astro'
 ---
 
 <Layout title="my page">
-  <section class="bg-zinc-200 dark:bg-slate-800 h-[1200px]">
-    <Navbar />
-    <Presentation />
-  </section>
-
-  <!-- Mis trabajos -->
-  <section>
-    
-  </section>
+  <Navbar />
+  
+  <Presentation />
+  
+  <div class="w-full sm:w-[90%] md:w-[80%] m-auto px-3 flex flex-col gap-10 mt-10 md:mt-0 md:gap-36">
+    <Projects />
+  </div>
+  
 </Layout>
