@@ -1,0 +1,82 @@
+---
+const skill = {
+  javascript: {
+    path: 'svg-icons/javascript.svg',
+    alt: 'JavaScript logo'
+  },
+  css: {
+    path: 'svg-icons/css.svg',
+    alt: 'CSS logo'
+  },
+  reactjs: {
+    path: 'svg-icons/reactjs.svg',
+    alt: 'React JS logo'
+  },
+  php: {
+    path: 'svg-icons/php.svg',
+    alt: 'PHP logo'
+  },
+  git: {
+    path: 'svg-icons/git.svg',
+    alt: 'Git logo'
+  },
+  tailwindcss: {
+    path: 'svg-icons/tailwindcss.svg',
+    alt: 'Tailwind CSS logo'
+  },
+  laravel: {
+    path: 'svg-icons/laravel.svg',
+    alt: 'Laravel logo'
+  },
+  mysql: {
+    path: 'svg-icons/mysql.svg',
+    alt: 'MySQL logo'
+  },
+  astrojs: {
+    path: 'svg-icons/astrojs.svg',
+    alt: 'Astro JS logo'
+  },
+  typescript: {
+    path: 'svg-icons/typescript.svg',
+    alt: 'TypeScript logo'
+  },
+}
+
+import SkillCard from '../components/SkillCard.astro'
+---
+
+<section class="w-full flex flex-col gap-8">
+  <h1 class="text-zinc-800 dark:text-zinc-100 text-4xl sm:text-5xl md:text-6xl font-bold">
+    Habilidades
+  </h1>
+
+  <div class="skills">
+    <SkillCard path={skill.javascript.path} alt={skill.javascript.alt}>JavaScript</SkillCard>
+    
+    <SkillCard path={skill.css.path} alt={skill.css.alt}>CSS</SkillCard>
+
+    <SkillCard path={skill.typescript.path} alt={skill.typescript.alt}>TypeScript</SkillCard>
+
+    <SkillCard path={skill.reactjs.path} alt={skill.reactjs.alt}>React JS</SkillCard>
+
+    <SkillCard path={skill.tailwindcss.path} alt={skill.tailwindcss.alt}>Tailwind CSS</SkillCard>
+
+    <SkillCard path={skill.astrojs.path} alt={skill.astrojs.alt}>Astro JS</SkillCard>
+    
+    <SkillCard path={skill.git.path} alt={skill.git.alt}>Git</SkillCard>
+
+    <SkillCard path={skill.php.path} alt={skill.php.alt}>PHP</SkillCard>
+
+    <SkillCard path={skill.laravel.path} alt={skill.laravel.alt}>Laravel</SkillCard>
+
+    <SkillCard path={skill.mysql.path} alt={skill.mysql.alt}>MySQL</SkillCard>
+  </div>
+</section>
+
+<style>
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+</style>
