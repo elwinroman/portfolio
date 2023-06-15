@@ -1,45 +1,37 @@
 ---
 import GithubIcon from '../components/svgs/GithubIcon.astro'
 import LinkedinIcon from '../components/svgs/LinkedinIcon.astro'
-import Wave from '../components/svgs/Wave.astro'
-import Link from '../components/Link.astro'
-import '@fontsource/roboto'
 ---
 
-<main id="presentation" class="relative w-full m-auto">
-  <div class="fade-up w-full h-[150px] absolute bottom-0 left-0 fill-slate-600 dark:fill-slate-300 hidden lg:block">
-    <Wave />
-  </div>
-  
-  <div class="w-full md:w-[90%] m-auto flex justify-center">
-    <div class="basis-full md:basis-1/2 flex flex-col justify-center z-10">
-      <div class="fade-right p-6 flex flex-col gap-3 font-[Roboto]">
-        <div>
-          <h1 class="text-zinc-800 dark:text-zinc-100 text-6xl font-bold">Elwin Roman</h1>
-          <h2 class="text-red-600 text-2xl font-bold">Full Stack Developer</h2>
-        </div>
-        <p class="text-stone-700 dark:text-stone-300">
-          Ingeniero de Sistemas con sólidos conocimientos en desarrollo web. Poseo experiencia en el uso de metodologías ágiles specializado en la aplicación de métricas ágiles.
-        </p>
-        <p class="text-stone-700 dark:text-stone-300">
-          Me destaco por ser altamente colaborativo, creativo, y sobre todo autodidacta. Comprometido con la excelencia, la innovación y el crecimiento profesional.
-        </p>  
-      </div>
+<main id="presentation" class="fade-in w-full grid items-center mt-20">
+  <div class="w-full sm:w-[90%] md:w-[80%] lg:w-[60%] m-auto p-3 flex flex-col gap-8 items-center">
+    <div class="flex flex-col gap-2 text-center">
+      <h1 class="text-zinc-800 dark:text-zinc-100 text-4xl sm:text-5xl md:text-6xl font-bold">ELWIN ROMAN</h1>
+      <h2 class="text-red-600 text-xl sm:text-2xl font-bold">Full Stack Developer</h2>
+    </div>
 
-      <div class="fade-in flex justify-center gap-3">
-        <Link href="https://www.github.com/elwinroman">
-          <GithubIcon width="24" height="24"/>
-        </Link>
-        <Link href="https://www.linkedin.com/in/elwinroman">
-          <LinkedinIcon width="20" height="20"/>
-        </Link>
-      </div>
+    <div class="flex flex-col text-center gap-3 text-sm sm:text-base">
+      <p class="text-balance text-stone-700 dark:text-stone-300">
+        Ingeniero de Sistemas con sólidos conocimientos en desarrollo web tanto backend como frontend. Poseo experiencia en el uso de metodologías ágiles.
+      </p>
+      <p class="text-balance text-stone-700 dark:text-stone-300">
+        Me destaco por ser altamente colaborativo, creativo, y sobre todo autodidacta. Comprometido con la excelencia, la innovación y el crecimiento profesional.
+      </p>
     </div>
-    
-    <div class="fade-left z-10 hidden md:block">
-      <img src="developer.webp" width="400" height="400" alt="" class="">
-    </div>
+
+    <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+      <button id="btn-github" class="btn-press bg-[#141516] hover:bg-[#141516]/90 text-white dark:hover:bg-[#141516]/50 fill-white">
+        <GithubIcon width="18" height="18"/>
+        <span>Repositorio Github</span>  
+      </button>
+
+      <button id="btn-linkedin" class="btn-press bg-[#0a66c2] hover:bg-[#0a66c2]/90 text-white dark:hover:bg-[#0a66c2]/50 fill-white">
+        <LinkedinIcon width="18" height="18"/>
+        <span>Perfil Linkedin</span>  
+      </button>
+    </div>  
   </div>
+
 </main>
 
 <style>
@@ -47,8 +39,30 @@ import '@fontsource/roboto'
   @tailwind components;
   @tailwind utilities;
 
-  #presentation {
-    margin-top: theme(spacing.20);
-    height: calc(100vh - theme(spacing.20));
+  @media (min-width: 768px) {
+    #presentation {
+      height: calc(100vh - theme(spacing.20));
+    }
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .btn-press {
+    @apply flex items-center px-2 sm:px-3 py-1.5 sm:py-2 gap-2 focus:outline-none rounded text-xs sm:text-sm;
   }
 </style>
+
+<script>
+  const btnGithub = document.getElementById('btn-github')
+  const btnLinkedin = document.getElementById('btn-linkedin')
+  
+  btnGithub.addEventListener('click', (e) => {
+    e.preventDefault()
+    window.open('https://www.github.com/elwinroman', '_blank')
+  })
+
+  btnLinkedin.addEventListener('click', (e) => {
+    e.preventDefault()
+    window.open('https://www.linkedin.com/in/elwinroman', '_blank')
+  })
+</script>
