@@ -1,11 +1,11 @@
 ---
 import Card from '../components/Card.astro'
 ---
-<section class="w-full flex flex-col gap-8">
+<section id="projects" class="w-full flex flex-col gap-8">
   <h1 class="text-zinc-800 dark:text-zinc-100 text-4xl sm:text-5xl md:text-6xl font-bold">
     Proyectos
   </h1>
-  <div id="projects" class="w-full justify-center md:justify-start">
+  <div class="projects w-full justify-center md:justify-start">
     <Card 
       link="https://juegodelavida.netlify.app"
       title="Juego de la Vida (Conway)" 
@@ -18,7 +18,7 @@ import Card from '../components/Card.astro'
 </section>
 
 <style>
-  #projects {
+  .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 320px));
     gap: 1.5rem;
