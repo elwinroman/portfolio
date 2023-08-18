@@ -4,7 +4,7 @@ import ExternalLinkIcon from "./svgs/ExternalLinkIcon.astro";
 const {link, title, tools, description, repo, src} = Astro.props
 ---
 
-<div class="flex flex-col justify-between bg-white dark:bg-slate-700 shadow-xl rounded overflow-hidden hover:scale-[1.03] duration-200">
+<div class="project-card flex flex-col justify-between bg-white dark:bg-slate-700 shadow-xl rounded overflow-hidden hover:scale-[1.02] duration-200 transition-[transform]">
   <header class="w-full">
     <a href={link} class="relative group cursor-pointer p-0" target="_blank">
       <img
@@ -32,13 +32,13 @@ const {link, title, tools, description, repo, src} = Astro.props
       </ul>
     </header>
 
-    <p class="text-balance leading-normal text-sm text-gray-900 dark:text-gray-300">{description}</p>
+    <p class="text-balance leading-normal text-[0.85rem] text-neutral-800 dark:text-neutral-300">{description}</p>
 
     { repo && 
     <footer class="">
-      <a href={repo} target="_blank" class="w-fit flex items-center gap-2 border group border-slate-500 px-1 sm:px-2 py-1 fill-gray-900 dark:fill-gray-300 rounded mb-1">
+      <a href={repo} target="_blank" class="max-w-[140px] flex items-center gap-2 bg-neutral-200 dark:bg-slate-800/30 border border-transparent hover:border-neutral-400 dark:hover:border-slate-500 px-0.5 sm:px-2 py-2 fill-neutral-900 dark:fill-neutral-300 rounded mb-1 transition-[border] duration-400">
         <GithubIcon width="16" height="16" />
-        <span class="text-gray-900 dark:text-gray-300 text-xs sm:text-sm group-hover:font-semibold duration-200">Ver repositorio</span>
+        <span class="text-neutral-900 dark:text-neutral-300 text-xs sm:text-[0.80rem]">Ver repositorio</span>
       </a>
     </footer> }
   </main>
@@ -48,5 +48,10 @@ const {link, title, tools, description, repo, src} = Astro.props
 <style>
   .text-balance {
     text-wrap: balance;
+  }
+  .project-card {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: perspective(1px) translateZ(0);
   }
 </style>
