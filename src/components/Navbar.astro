@@ -1,57 +1,42 @@
 ---
 import ThemeMode from './ThemeMode.jsx'
- 
+import FolderIcon from './svgs/FolderIcon.astro'
+
 const navs = [ 
   {
+    icon: FolderIcon,
     text: 'Sobre mi',
     link: '#about'
-  }, 
+  },
   {
+    icon: FolderIcon,
+    text: 'Experiencia',
+    link: '#experience'
+  },
+  {
+    icon: FolderIcon,
     text: 'Proyectos',
     link: '#projects'
   }, 
   {
+    icon: FolderIcon,
     text: 'Habilidades',
     link: '#skills'
-  }]
+  }
+]
 ---
 
-<nav id="mynavbar" class="w-full h-20 fixed top-0 bg-zinc-50 dark:bg-slate-800 dark:[&.is-sticky]:bg-slate-800/70 [&.is-sticky]:bg-zinc-200/70 border-b border-zinc-300 dark:border-slate-700 z-50 px-3 md:px-6 flex justify-between items-center flex-wrap">
+<nav id="mynavbar" class="w-fit h-16 fixed top-10 bg-zinc-100/50 dark:bg-slate-800/50 rounded-xl border border-white dark:border-slate-700 z-50 px-3 md:px-6 flex justify-between items-center flex-wrap shadow-lg backdrop-blur-sm">
   
-  <div class="flex-grow basis-0 hidden md:block font-bold text-xl text-slate-800 dark:text-zinc-100">
-    ER
-  </div>
   <ul class="h-full flex flex-row justify-center items-center md:gap-3 text-slate-800 dark:text-slate-200">
     {
       navs.map((nav) => 
-        <a href={nav.link}><li class="hover:bg-slate-600 hover:text-slate-200 py-1.5 px-1.5 md:py-2 md:px-3 rounded transition-colors duration-300 text-sm md:text-base">
-          {nav.text}
+        <a href={nav.link}><li class="w-9 h-9 bg-gray-200 dark:bg-slate-900 rounded-full transition-all duration-150 grid place-content-center border border-gray-100 dark:border-slate-600 hover:border-white dark:hover:border-slate-700 hover:scale-125">
+          {/* {nav.text} */}
+          { nav.icon ? <nav.icon width="20" height="20" /> : nav.text}
         </li></a>
       )
     }
-  </ul>
-
-  <div class="flex-grow basis-0 flex justify-end items-center">
     <ThemeMode client:only/>
-  </div>
+  </ul>
 </nav>
-
-<script>
-  // Sticky navbar
-  const navbar = document.getElementById('mynavbar')
-  const height = navbar.clientHeight
-  window.addEventListener('scroll', () => {
-    window.scrollY >= height 
-    ? navbar.classList.add('is-sticky') 
-    : navbar.classList.remove('is-sticky')
-  })
-</script>
-
-<style>
-  #mynavbar.is-sticky {
-    border: none;
-    backdrop-filter: blur(5px) saturate(4.5);
-    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.4);
-    transition: all 200ms ease-in-out;
-  }
-</style>

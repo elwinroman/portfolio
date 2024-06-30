@@ -13,7 +13,7 @@ export default function ThemeMode () {
   }
 
   return (
-    <div className="bg-slate-600 dark:bg-slate-200 p-2 rounded duration-200 cursor-pointer" onClick={handleClick}>
+    <div className="w-9 h-9 bg-gray-300 hover:text-slate-200 rounded-full transition-all duration-150 grid place-content-center hover:border hover:border-white hover:scale-125 cursor-pointer" onClick={handleClick}>
       <div className="rotate-90 dark:rotate-0 duration-200 text-slate-200 dark:text-slate-800"> 
       {
         theme ? <DarkModeIcon width="20" height="20" /> : <LightModeIcon width="20" height="20" />
