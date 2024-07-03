@@ -25,10 +25,10 @@ import SparklesIcon from './svgs/SparklesIcon.astro'
   <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
     <ul class="flex flex-row gap-4">
       <li>
-        <a href="" class="fill-amber-700 dark:fill-amber-400"><GithubIcon width="20" height="20"/></a>
+        <a href="https://www.github.com/elwinroman" class="fill-amber-700 dark:fill-amber-400" target="_blank"><GithubIcon width="20" height="20"/></a>
       </li>
       <li>
-        <a href="" class="fill-amber-700 dark:fill-amber-400"><LinkedinIcon width="20" height="20"/></a>
+        <a href="https://www.linkedin.com/in/elwinroman" class="fill-amber-700 dark:fill-amber-400" target="_blank"><LinkedinIcon width="20" height="20"/></a>
       </li>
     </ul>
   </div>
@@ -45,18 +45,3 @@ import SparklesIcon from './svgs/SparklesIcon.astro'
 <style>
   .text-balance { text-wrap: balance; } 
 </style>
-
-<script>
-  const btnGithub = document.getElementById('btn-github')
-  const btnLinkedin = document.getElementById('btn-linkedin')
-  
-  btnGithub.addEventListener('click', (e) => {
-    e.preventDefault()
-    window.open('https://www.github.com/elwinroman', '_blank')
-  })
-
-  btnLinkedin.addEventListener('click', (e) => {
-    e.preventDefault()
-    window.open('https://www.linkedin.com/in/elwinroman', '_blank')
-  })
-</script>
