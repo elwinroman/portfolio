@@ -1,28 +1,4 @@
----
-import GithubIcon from './svgs/GithubIcon.astro'
-import LinkedinIcon from './svgs/LinkedinIcon.astro'
-import MailIcon from './svgs/MailIcon.astro'
-
-const githubUrl = 'https://www.github.com/elwinroman'
-const linkedinUrl = 'https://www.linkedin.com/in/elwinroman'
-const email = 'elwinromanv@gmail.com'
----
-
-<footer class="w-full h-52 mt-20 bg-zinc-900 dark:bg-slate-800 flex flex-col justify-center items-center gap-8 dark:border-t dark:border-slate-500">
-  <h2 class="text-gray-300 text-xl font-bold">Contacto</h2>
-  <div class="flex flex-col gap-4">
-    <div class="flex justify-center gap-4 fill-amber-400">
-      <a href={githubUrl} target="_blank" class="fill-amber-400">
-        <GithubIcon width="24" height="24"/>
-      </a>
-      <a href={linkedinUrl} target="_blank" class="fill-amber-400">
-        <LinkedinIcon width="24" height="24"/>
-      </a>
-    </div>
-
-    <div class="flex justify-center items-center gap-2 text-gray-400">
-      <MailIcon width="16" height="16"/>
-      <span class="text-sm">{email}</span>
-    </div>
-  </div>
+<footer class="w-full h-20 flex flex-col justify-center items-center">
+  <p class="text-sm">Hecho con ❤️ por Elwin Roman</p>
+  <p class="text-sm">Powered by Astro 🚀</p>
 </footer>

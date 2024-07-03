@@ -1,54 +1,49 @@
 ---
 import GithubIcon from './svgs/GithubIcon.astro'
 import LinkedinIcon from './svgs/LinkedinIcon.astro'
+import SparklesIcon from './svgs/SparklesIcon.astro'
 ---
 
-<main id="about" class="fade-in w-full flex mt-20">
-  <div class="w-full sm:w-[90%] md:w-[80%] max-w-4xl m-auto p-3 flex flex-col gap-8 items-center">
-    <div class="flex flex-col gap-2 text-center">
-      <h1 class="text-slate-900 dark:text-zinc-100 text-4xl sm:text-5xl md:text-6xl font-bold">ELWIN ROMAN</h1>
-      <h2 class="text-rose-600 text-xl sm:text-3xl font-bold">Software Engineer</h2>
+<main id="about" class="fade-in w-full flex flex-col gap-8">
+  <div class="w-full flex flex-col gap-3">
+    <div class="flex flex-col">
+      <h1 class="text-gray-800 dark:text-gray-200 text-3xl font-bold">Elwin Roman</h1>
+      <h2 class="text-amber-700 dark:text-amber-400 text-lg font-bold">Software Engineer</h2>
     </div>
 
-    <div class="max-w-xl flex flex-col text-center gap-3 text-sm md:text-[0.94rem] text-neutral-700 dark:text-neutral-300">
+    <div class="max-w-2xl flex flex-col gap-2 text-sm md:text-base text-gray-800 dark:text-gray-300">
       <p class="text-balance">
-        Amplios y sólidos conocimientos en desarrollo web. Capacidad de crear proyectos web que abarca la planificación, desarrollo y despliegue.
+        ¡Hola! 👋 Soy desarrollador web full stack apasionado por crear grandes cosas, <span class="font-bold">+1 año de experiencia.</span>
       </p>
       <p class="text-balance">
-        Experiencia en la gestión ágil de proyectos. Altamente colaborativo, creativo, y sobre todo autodidacta. Comprometido con la excelencia, la innovación y el crecimiento profesional.
+        La buena arquitectura de software y el testing son mis pilares fundamentales. Creo que un código bien estructurado y robusto es la base para cualquier proyecto exitoso.
       </p>
     </div>
+  </div>
 
-    <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
-      <button id="btn-github" class="btn-press bg-[#010409] hover:bg-[#171b20]">
-        <GithubIcon width="18" height="18"/>
-        <span>Github</span>  
-      </button>
+  <!-- Enlaces de interes -->
+  <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+    <ul class="flex flex-row gap-4">
+      <li>
+        <a href="" class="fill-amber-700 dark:fill-amber-400"><GithubIcon width="20" height="20"/></a>
+      </li>
+      <li>
+        <a href="" class="fill-amber-700 dark:fill-amber-400"><LinkedinIcon width="20" height="20"/></a>
+      </li>
+    </ul>
+  </div>
 
-      <button id="btn-linkedin" class="btn-press bg-[#0a66c2] hover:bg-[#0d6fd1]">
-        <LinkedinIcon width="18" height="18"/>
-        <span>Linkedin</span>  
-      </button>
-    </div>  
+  <!-- Button ese-->
+  <div class="w-fit bg-gray-50 dark:bg-transparent flex flex-row gap-1 items-center px-3 py-1 border border-white dark:border-gray-700 outline outline-1 outline-gray-200 dark:outline-none rounded-lg">
+    <i class="text-emerald-500">
+      <SparklesIcon width="16" height="16"/>
+    </i>
+    <span class="text-sm font-bold text-gray-800 dark:text-gray-300">Disponible para nuevos proyectos</span>
   </div>
 </main>
 
 <style>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  @media (min-width: 768px) {
-    #about {
-      height: calc(100vh - theme(spacing.20));
-    }
-  }
-  .text-balance {
-    /* text-wrap: balance; */
-  }
-  .btn-press {
-    @apply w-[120px] shadow-lg flex justify-center items-center px-2 sm:px-3 py-1.5 sm:py-2 gap-2 focus:outline-none rounded text-xs sm:text-[0.9rem] transition-[background] duration-300 text-[#f6f8fa] fill-[#f6f8fa];
-  }
+  .text-balance { text-wrap: balance; } 
 </style>
 
 <script>
