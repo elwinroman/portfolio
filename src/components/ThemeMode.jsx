@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import DarkModeIcon from '../components/svgs/DarkModeIcon.jsx'
-import LightModeIcon from '../components/svgs/LightModeIcon.jsx'
+import DarkModeIcon from './icons/DarkMode.jsx'
+import LightModeIcon from './icons/LightModel.jsx'
 
 export default function ThemeMode () {
   const [theme, setTheme] = useState(false)
