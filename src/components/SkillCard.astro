@@ -1,11 +1,44 @@
 ---
 const { path, alt } = Astro.props
-const size = '60'
+const size = '40'
 ---
 
-<div class="flex flex-col justify-center items-center gap-2 shadow-lg p-2 md:p-4 bg-white dark:bg-slate-700 rounded text-gray-600 dark:text-gray-300">
+<div class="box flex flex-col justify-center items-center gap-2 shadow-lg py-6 px-2 dark:bg-slate-700 rounded text-gray-600 dark:text-gray-300">
   <img src={path} width={size} height={size} alt={alt} class="max-w-none">
   <span class="text-sm">
     <slot />
   </span>
 </div>
+
+<script>
+  const cards: NodeListOf <HTMLDivElement> = document.querySelectorAll('.box')
+  
+  let pos: {
+    x: number, 
+    y: number
+  } = {
+    x: 0, 
+    y: 0
+  }
+  let rgba: string = ''
+
+  cards.forEach(card => {
+    // Set background image - radial gradient
+    card.addEventListener('mousemove', (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      pos.x = e.clientX - rect.left
+      pos.y = e.clientY - rect.top
+
+      rgba = JSON.parse(localStorage.getItem('isDark'))
+              ? 'rgba(150, 150, 150, 0.1)'
+              : 'rgba(97, 97, 97, 0.1)'
+
+      card.style.backgroundImage = `radial-gradient(200px circle at ${pos.x}px ${pos.y}px, ${rgba}, transparent 60%)`
+    })
+
+    // Reset background image
+    card.addEventListener('mouseleave', (e: MouseEvent) => {
+      card.style.backgroundImage = "none"
+    })
+  })
+</script>

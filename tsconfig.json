@@ -9,6 +9,8 @@
       "@/components/*": ["src/components/*"],
       "@/icons/*": ["src/icons/*"],
       "@/constants/*": ["src/constants/*"],
+      "@/sections/*": ["src/sections/*"],
+      "@/layouts/*": ["src/layouts/*"],
     }
   },
 }

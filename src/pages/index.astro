@@ -1,12 +1,12 @@
 ---
 import '../../static/global.css'
 import '@fontsource-variable/inter'
-import Layout from '../layouts/Layout.astro'
-import Navbar from '../components/Navbar.astro'
-import Presentation from '../components/about-section/Presentation.astro'
-import Projects from '../components/Projects.astro'
-import Skills from '../components/Skills.astro'
-import Footer from '../components/Footer.astro'
+import Layout from '@/layouts/Layout.astro'
+import Navbar from '@/components/Navbar.astro'
+import About from '@/sections/About.astro'
+import Projects from '@/sections/Projects.astro'
+import Skills from '@/sections/Skills.astro'
+import Footer from '@/components/Footer.astro'
 
 const date = new Date()
 const formattedDate = new Intl.DateTimeFormat('es-ES', { dateStyle: 'medium' }).format(date)
@@ -22,7 +22,7 @@ const formattedDate = new Intl.DateTimeFormat('es-ES', { dateStyle: 'medium' }).
       <span class="text-amber-300">¡Vuelve pronto para ver lo nuevo!</span>
       <span>{formattedDate} </span>
     </div>
-    <Presentation />
+    <About />
     <Skills />
     <Projects />
   </div>

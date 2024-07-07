@@ -9,6 +9,7 @@ export default function ThemeMode () {
   // Modo light/dark
   const handleClick = () => {
     root.classList.toggle('dark')
+    localStorage.setItem('isDark', !theme)
     setTheme(!theme)
   }
 
