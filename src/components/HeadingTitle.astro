@@ -1,0 +1,11 @@
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<h2 class="text-slate-700 font-bold text-2xl dark:text-slate-300">
+  <span>{ title }</span>
+</h2>
