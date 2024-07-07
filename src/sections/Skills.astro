@@ -8,7 +8,7 @@ import { skills } from '@/constants/skills'
     Habilidades
   </h1>
 
-  <div class="skills">
+  <div class="skills bg-slate-100 p-4 border border-white rounded-lg outline outline-1 outline-gray-200 dark:bg-transparent dark:border-gray-700 dark:outline-none">
     { 
       skills.map(skill => (
         <SkillCard path={skill.path} alt={skill.alt}>{skill.name}</SkillCard>
