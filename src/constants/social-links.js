@@ -1,4 +1,4 @@
-const iconLinkSize = 24
+const iconLinkSize = 23
 export const links = [
   { 
     name: 'Github',

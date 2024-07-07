@@ -26,13 +26,13 @@ import { links } from '@/constants/social-links.js'
   </div>
 
   <!-- Enlaces de interes -->
-  <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+  <div class="flex flex-wrap gap-3 sm:justify-start">
     <ul class="flex flex-row gap-3">
       {
         links.map(({ name, href, icon, brandColor1TailwindClass, brandColor2TailwindClass }) => (
           <li>
             <a href={href} target="_blank" class="group relative">
-              <i class={`inline-block p-1 text-orange-600 ${brandColor2TailwindClass} dark:text-amber-400 hover:text-amber-600 hover:dark:text-amber-500 hover:transition-all hover:duration-[400ms] hover:scale-110 ${brandColor1TailwindClass} hover:rounded-full hover:border-transparent`}>
+              <i class={`inline-block p-1.5 text-orange-600 ${brandColor2TailwindClass} dark:text-amber-400 hover:transition-all hover:duration-[400ms] hover:scale-110 ${brandColor1TailwindClass} hover:rounded-full hover:border-transparent`}>
                 <Fragment set:html={icon}></Fragment>
               </i>
               <span class="opacity-0 absolute top-6 left-0 bg-gray-900 text-gray-200 text-[10px] whitespace-nowrap px-1 py-0.5 rounded-md pointer-events-none duration-200 group-hover:opacity-100">{name}</span>
