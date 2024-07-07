@@ -5,13 +5,13 @@ import { links } from '@/constants/social-links.js'
 ---
 
 <main id="about" class="fade-in w-full flex flex-col gap-6">
-  <div class="w-full flex flex-col gap-4">
-    <div class="flex flex-col">
-      <h1 class="text-gray-800 dark:text-gray-200 text-3xl font-bold">Elwin Roman</h1>
-      <h2 class="text-orange-600 dark:text-amber-400 text-lg font-bold">Software Engineer</h2>
-      <div class="flex flex-row items-center gap-1 text-slate-500 dark:text-slate-400">
-        <i><LocationPinIcon width="14" height="14" /></i>
-        <span class="text-sm">Perú</span>
+  <div class="w-full flex flex-col gap-6">
+    <div class="flex flex-col gap-1">
+      <h1 class="text-gray-800 dark:text-gray-200 text-4xl font-extrabold">Elwin Roman</h1>
+      <h2 class="text-orange-600 dark:text-amber-400 text-base font-semibold">Software Engineer</h2>
+      <div class="flex flex-row items-center gap-2">
+        <i class="text-gray-600 dark:text-gray-400"><LocationPinIcon width="14" height="14" /></i>
+        <span class="text-xs text-slate-500 dark:text-slate-400">Perú</span>
       </div>
     </div>
 
@@ -20,7 +20,7 @@ import { links } from '@/constants/social-links.js'
         ¡Hola! 👋 Soy un desarrollador web Frontend y entusiasta del Backend, apasionado por crear grandes cosas, con <span class="font-bold">+1 año de experiencia.</span>
       </p>
       <p class="text-balance">
-        La buena arquitectura de software y el testing son mis pilares fundamentales. Creo que un código bien estructurado y robusto es la base para cualquier proyecto exitoso.
+        La buena <strong>arquitectura de software</strong> y el <strong>testing</strong> son mis pilares fundamentales. Creo que un código bien estructurado y robusto es la base para cualquier proyecto exitoso.
       </p>
     </div>
   </div>
@@ -32,7 +32,7 @@ import { links } from '@/constants/social-links.js'
         links.map(({ name, href, icon, brandColor1TailwindClass, brandColor2TailwindClass }) => (
           <li>
             <a href={href} target="_blank" class="group relative">
-              <i class={`inline-block border border-dashed border-gray-100 p-1 text-orange-600 ${brandColor2TailwindClass} dark:text-amber-400 hover:text-amber-600 hover:dark:text-amber-500 hover:transition-all hover:duration-[400ms] hover:scale-110 ${brandColor1TailwindClass} hover:rounded-full hover:border-transparent`}>
+              <i class={`inline-block p-1 text-orange-600 ${brandColor2TailwindClass} dark:text-amber-400 hover:text-amber-600 hover:dark:text-amber-500 hover:transition-all hover:duration-[400ms] hover:scale-110 ${brandColor1TailwindClass} hover:rounded-full hover:border-transparent`}>
                 <Fragment set:html={icon}></Fragment>
               </i>
               <span class="opacity-0 absolute top-6 left-0 bg-gray-900 text-gray-200 text-[10px] whitespace-nowrap px-1 py-0.5 rounded-md pointer-events-none duration-200 group-hover:opacity-100">{name}</span>
