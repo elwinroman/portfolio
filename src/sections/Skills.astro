@@ -1,18 +1,39 @@
 ---
 import SkillCard from '@/components/SkillCard.astro'
 import HeadingTitle from '@/components/HeadingTitle.astro'
-import { skills } from '@/constants/skills'
+import { mainSkills, otherSkills } from '@/constants/skills'
 ---
 
 <section>
   <div class="bg-slate-100 w-full flex flex-col gap-3 p-4 border border-white rounded-lg outline outline-1 outline-gray-200 dark:bg-transparent dark:border-gray-700 dark:outline-none">
-    <HeadingTitle title="Stack" />
-    <div class="skills">
-      { 
-        skills.map(skill => (
-          <SkillCard path={skill.path} alt={skill.alt}>{skill.name}</SkillCard>
-        ))
-      }
+    <HeadingTitle title="Stack tecnológico" />
+
+    <article class="w-full flex flex-col gap-10 md:flex-row">
+      <div class="flex-1 flex flex-col gap-2">
+        <span class="text-slate-700 font-semibold text-sm dark:text-slate-300">Stack principal</span>
+        <div class="skills">
+          { 
+            mainSkills.map(skill => (
+              <SkillCard path={skill.path} alt={skill.alt}>
+                <span class="text-[13px] text-slate-600 dark:text-slate-300">{skill.name}</span>
+              </SkillCard>
+            ))
+          }
+        </div>
+      </div>
+  
+      <div class="flex-1 flex flex-col gap-2">
+        <span class="text-slate-700 font-semibold text-sm dark:text-slate-300">Stack secundario</span>
+        <div class="skills">
+          { 
+            otherSkills.map(skill => (
+              <SkillCard path={skill.path} alt={skill.alt}>
+                <span class="text-[13px] text-slate-600 dark:text-slate-300">{skill.name}</span>
+              </SkillCard>
+            ))
+          }
+        </div>
+    </article>
     </div>
   </div>
 </section>
@@ -20,7 +41,7 @@ import { skills } from '@/constants/skills'
 <style>
   .skills {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.6rem;
   }
 </style>
